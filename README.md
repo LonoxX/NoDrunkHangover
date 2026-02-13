@@ -14,7 +14,9 @@ This mod continuously resets the player's drunk and hangover values to zero, eff
 ## Installation
 
 1. Make sure MSCLoader is installed.
-2. Download the latest release
+2. Download the latest release:
+   - [GitHub](https://github.com/LonoxX/MWC-NoDrunkHangover/releases)
+   - [Nexus Mods](https://www.nexusmods.com/mywintercar/mods/1709)
 3. Place the DLL file into the `Mods` folder of your My Winter Car installation directory.
 
 ## Building from Source
