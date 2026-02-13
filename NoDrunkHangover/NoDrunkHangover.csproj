@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>NoDrunkHangover</AssemblyName>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <TargetFramework>net35</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>14.0</LangVersion>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <GameReferencePath Condition="'$(GameReferencePath)' == ''">C:\Program Files (x86)\Steam\steamapps\common\My Winter Car\mywintercar_Data\Managed</GameReferencePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MSCLoader">
+      <HintPath>$(GameReferencePath)\MSCLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(GameReferencePath)\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="PlayMaker">
+      <HintPath>$(GameReferencePath)\PlayMaker.dll</HintPath>
+    </Reference>
+    <Reference Include="ES2">
+      <HintPath>$(GameReferencePath)\ES2.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Target Name="CopyToMods" AfterTargets="Build" Condition="'$(CI)' != 'true'">
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFolder="C:\Program Files (x86)\Steam\steamapps\common\My Winter Car\Mods\" />
+  </Target>
+</Project>
